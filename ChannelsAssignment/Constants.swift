@@ -9,7 +9,7 @@
 import Foundation
 
 struct TableCellIdentifier {
-    static let ChannelTableViewCell = "ChannelTableViewCell"
+    static let ChannelTableViewCell = "ChannelsTableViewCell"
 }
 
 struct CommonAlertMessage {

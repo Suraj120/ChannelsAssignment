@@ -7,34 +7,70 @@
 //
 
 import UIKit
+import Alamofire
+import AlamofireImage
 
 class ViewController: UIViewController {
 
     @IBOutlet weak var channelsTable: UITableView!
-    
+    let url = "https://raw.githubusercontent.com/jvanaria/jvanaria.github.io/master/channels.json"
+    var channelModelArray = [Channels]()
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.title = TitleConstants.ViewControllerTitle
         channelsTable.delegate = self
         channelsTable.dataSource = self
+        
         registerNibs()
+        getDataFromWebServices()
+        
+        
     }
     
     func registerNibs() {
+        
       let channelTableViewCellNIB = UINib(nibName: TableCellIdentifier.ChannelTableViewCell, bundle: nil)
         channelsTable.register(channelTableViewCellNIB, forCellReuseIdentifier: TableCellIdentifier.ChannelTableViewCell)
         
+    }
+    
+    func getDataFromWebServices(){
+        Alamofire.request(url).responseData { (data) in
+            
+                guard let data = data.data else { return }
+                do {
+                    let channel = try JSONDecoder().decode(ChannelsModel.self, from: data)
+                   print(channel.channels[0])
+                    self.channelModelArray = channel.channels
+                    print(self.channelModelArray)
+                } catch {
+                    fatalError()
+                }
+            self.channelsTable.reloadData()
+        }
     }
 
 }
 
 extension ViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        <#code#>
+        print(channelModelArray.count)
+        return channelModelArray.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        <#code#>
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: TableCellIdentifier.ChannelTableViewCell, for: indexPath) as? ChannelsTableViewCell
+            
+            else {
+            fatalError()
+        }
+        cell.title.text = channelModelArray[indexPath.row].title
+        return cell
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 120
     }
     
     

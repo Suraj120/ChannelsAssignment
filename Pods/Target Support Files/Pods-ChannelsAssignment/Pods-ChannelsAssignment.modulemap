@@ -1,0 +1,6 @@
+framework module Pods_ChannelsAssignment {
+  umbrella header "Pods-ChannelsAssignment-umbrella.h"
+
+  export *
+  module * { export * }
+}

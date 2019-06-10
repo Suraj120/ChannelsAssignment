@@ -16,6 +16,8 @@
 		4498B3B522ADF57200A07CAF /* ChannelsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4498B3B322ADF57200A07CAF /* ChannelsTableViewCell.xib */; };
 		4498B3B722ADF98600A07CAF /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4498B3B622ADF98600A07CAF /* Constants.swift */; };
 		4498B3B922ADF99700A07CAF /* Utility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4498B3B822ADF99700A07CAF /* Utility.swift */; };
+		4498B3BB22ADFDB900A07CAF /* ChannelsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4498B3BA22ADFDB900A07CAF /* ChannelsModel.swift */; };
+		B7DCAC6A4700DE3927C7BE93 /* Pods_ChannelsAssignment.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D55BCD4994AF2851B079E9CC /* Pods_ChannelsAssignment.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +32,10 @@
 		4498B3B322ADF57200A07CAF /* ChannelsTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ChannelsTableViewCell.xib; sourceTree = "<group>"; };
 		4498B3B622ADF98600A07CAF /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		4498B3B822ADF99700A07CAF /* Utility.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utility.swift; sourceTree = "<group>"; };
+		4498B3BA22ADFDB900A07CAF /* ChannelsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChannelsModel.swift; sourceTree = "<group>"; };
+		45DF03E0B5C98208D18E13F3 /* Pods-ChannelsAssignment.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ChannelsAssignment.release.xcconfig"; path = "Target Support Files/Pods-ChannelsAssignment/Pods-ChannelsAssignment.release.xcconfig"; sourceTree = "<group>"; };
+		481325DC1B1C73645B44FF9F /* Pods-ChannelsAssignment.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ChannelsAssignment.debug.xcconfig"; path = "Target Support Files/Pods-ChannelsAssignment/Pods-ChannelsAssignment.debug.xcconfig"; sourceTree = "<group>"; };
+		D55BCD4994AF2851B079E9CC /* Pods_ChannelsAssignment.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ChannelsAssignment.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -37,6 +43,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B7DCAC6A4700DE3927C7BE93 /* Pods_ChannelsAssignment.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -48,6 +55,8 @@
 			children = (
 				4498B39F22ADF4D300A07CAF /* ChannelsAssignment */,
 				4498B39E22ADF4D300A07CAF /* Products */,
+				E5B7F3E527D56AB395DBAC86 /* Pods */,
+				5759093239A2899D96BFD497 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -72,8 +81,27 @@
 				4498B3B322ADF57200A07CAF /* ChannelsTableViewCell.xib */,
 				4498B3B622ADF98600A07CAF /* Constants.swift */,
 				4498B3B822ADF99700A07CAF /* Utility.swift */,
+				4498B3BA22ADFDB900A07CAF /* ChannelsModel.swift */,
 			);
 			path = ChannelsAssignment;
+			sourceTree = "<group>";
+		};
+		5759093239A2899D96BFD497 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				D55BCD4994AF2851B079E9CC /* Pods_ChannelsAssignment.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		E5B7F3E527D56AB395DBAC86 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				481325DC1B1C73645B44FF9F /* Pods-ChannelsAssignment.debug.xcconfig */,
+				45DF03E0B5C98208D18E13F3 /* Pods-ChannelsAssignment.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -83,9 +111,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 4498B3AF22ADF4D600A07CAF /* Build configuration list for PBXNativeTarget "ChannelsAssignment" */;
 			buildPhases = (
+				01F628B940ABE145961BB635 /* [CP] Check Pods Manifest.lock */,
 				4498B39922ADF4D300A07CAF /* Sources */,
 				4498B39A22ADF4D300A07CAF /* Frameworks */,
 				4498B39B22ADF4D300A07CAF /* Resources */,
+				48D4D103A4233AB5232648AD /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -143,6 +173,55 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		01F628B940ABE145961BB635 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-ChannelsAssignment-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		48D4D103A4233AB5232648AD /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-ChannelsAssignment/Pods-ChannelsAssignment-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/AlamofireImage/AlamofireImage.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AlamofireImage.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-ChannelsAssignment/Pods-ChannelsAssignment-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		4498B39922ADF4D300A07CAF /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -151,6 +230,7 @@
 				4498B3B922ADF99700A07CAF /* Utility.swift in Sources */,
 				4498B3B422ADF57200A07CAF /* ChannelsTableViewCell.swift in Sources */,
 				4498B3A322ADF4D300A07CAF /* ViewController.swift in Sources */,
+				4498B3BB22ADFDB900A07CAF /* ChannelsModel.swift in Sources */,
 				4498B3A122ADF4D300A07CAF /* AppDelegate.swift in Sources */,
 				4498B3B722ADF98600A07CAF /* Constants.swift in Sources */,
 			);
@@ -296,6 +376,7 @@
 		};
 		4498B3B022ADF4D600A07CAF /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 481325DC1B1C73645B44FF9F /* Pods-ChannelsAssignment.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -314,6 +395,7 @@
 		};
 		4498B3B122ADF4D600A07CAF /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 45DF03E0B5C98208D18E13F3 /* Pods-ChannelsAssignment.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;

@@ -41,5 +41,7 @@
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
+	<key>APIURL</key>
+	<string>https://raw.githubusercontent.com/jvanaria/jvanaria.github.io/master/channels.json</string>
 </dict>
 </plist>
