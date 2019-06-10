@@ -23,6 +23,7 @@ class ViewController: UIViewController {
     func registerNibs() {
       let channelTableViewCellNIB = UINib(nibName: TableCellIdentifier.ChannelTableViewCell, bundle: nil)
         channelsTable.register(channelTableViewCellNIB, forCellReuseIdentifier: TableCellIdentifier.ChannelTableViewCell)
+        
     }
 
 }
