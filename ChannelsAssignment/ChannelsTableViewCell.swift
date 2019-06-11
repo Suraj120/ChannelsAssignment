@@ -19,6 +19,8 @@ class ChannelsTableViewCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
+        channelsImg.layer.cornerRadius = channelsImg.frame.size.height / 2
+        
     }
 
     
