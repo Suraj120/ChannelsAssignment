@@ -15,6 +15,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var channelsTable: UITableView!
     let url = "https://raw.githubusercontent.com/jvanaria/jvanaria.github.io/master/channels.json"
     var channelModelArray = [Channels]()
+    var searchResultsArray = [Channels]()
     var resultSearchController = UISearchController()
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -77,7 +78,11 @@ class ViewController: UIViewController {
 
 extension ViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return channelModelArray.count
+        if resultSearchController.isActive && resultSearchController.searchBar.text != "" {
+            return searchResultsArray.count
+        } else {
+            return channelModelArray.count
+        }
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -86,14 +91,27 @@ extension ViewController: UITableViewDataSource, UITableViewDelegate {
             fatalError()
         }
         
-        cell.title.text = channelModelArray[indexPath.row].title
-        cell.titleDesc.text = channelModelArray[indexPath.row].description
-        cell.djName.text = channelModelArray[indexPath.row].dj
-        let image = channelModelArray[indexPath.row].image
-        if let url = URL(string: image) {
-        cell.channelsImg.af_setImage(withURL: url)
+        if resultSearchController.isActive && resultSearchController.searchBar.text != "" {
+            cell.title.text = searchResultsArray[indexPath.row].title
+            cell.titleDesc.text = searchResultsArray[indexPath.row].description
+            cell.djName.text = searchResultsArray[indexPath.row].dj
+            let image = searchResultsArray[indexPath.row].image
+            if let url = URL(string: image) {
+                cell.channelsImg.af_setImage(withURL: url)
+            }
+            return cell
+            
+        } else {
+            cell.title.text = channelModelArray[indexPath.row].title
+            cell.titleDesc.text = channelModelArray[indexPath.row].description
+            cell.djName.text = channelModelArray[indexPath.row].dj
+            let image = channelModelArray[indexPath.row].image
+            if let url = URL(string: image) {
+                cell.channelsImg.af_setImage(withURL: url)
+            }
+            return cell
         }
-        return cell
+       return UITableViewCell()
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -104,8 +122,9 @@ extension ViewController: UITableViewDataSource, UITableViewDelegate {
 }
 extension ViewController: UISearchResultsUpdating {
     func updateSearchResults(for searchController: UISearchController) {
-        
+        self.searchResultsArray = self.channelModelArray.filter {
+            ($0.dj.contains(searchController.searchBar.text!))
+        }
+        self.channelsTable.reloadData()
     }
-    
-    
 }

@@ -10,11 +10,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ChannelsAssignment/ViewController.swift"
-            timestampString = "581916010.312187"
+            timestampString = "582085125.523459"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "44"
-            endingLineNumber = "44"
+            startingLineNumber = "45"
+            endingLineNumber = "45"
             landmarkName = "getDataFromWebServices()"
             landmarkType = "7">
          </BreakpointContent>
