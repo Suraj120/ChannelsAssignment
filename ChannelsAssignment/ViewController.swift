@@ -96,7 +96,7 @@ extension ViewController: UITableViewDataSource, UITableViewDelegate {
             cell.titleDesc.text = searchResultsArray[indexPath.row].description
             cell.djName.text = searchResultsArray[indexPath.row].dj
             let image = searchResultsArray[indexPath.row].image
-            if let url = URL(string: image) {
+            if let url = URL(string: image!) {
                 cell.channelsImg.af_setImage(withURL: url)
             }
             return cell
@@ -106,24 +106,35 @@ extension ViewController: UITableViewDataSource, UITableViewDelegate {
             cell.titleDesc.text = channelModelArray[indexPath.row].description
             cell.djName.text = channelModelArray[indexPath.row].dj
             let image = channelModelArray[indexPath.row].image
-            if let url = URL(string: image) {
+            if let url = URL(string: image!) {
                 cell.channelsImg.af_setImage(withURL: url)
             }
             return cell
         }
-       return UITableViewCell()
+      // return UITableViewCell()
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 120
     }
-    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if let detailsVC = self.storyboard?.instantiateViewController(withIdentifier: "DetailsViewController") as? DetailsViewController {
+            if resultSearchController.isActive && resultSearchController.searchBar.text != "" {
+                detailsVC.channelModel = searchResultsArray[indexPath.row]
+            } else {
+                detailsVC.channelModel = channelModelArray[indexPath.row]
+            }
+            resultSearchController.isActive = false
+            self.navigationController?.pushViewController(detailsVC, animated: true)
+        }
+    }
     
 }
 extension ViewController: UISearchResultsUpdating {
     func updateSearchResults(for searchController: UISearchController) {
         self.searchResultsArray = self.channelModelArray.filter {
-            ($0.dj.contains(searchController.searchBar.text!))
+           // ($0.dj.contains(searchController.searchBar.text!))
+            ($0.description!.contains(searchController.searchBar.text!))
         }
         self.channelsTable.reloadData()
     }

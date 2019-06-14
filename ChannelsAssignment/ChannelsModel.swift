@@ -13,8 +13,11 @@ struct ChannelsModel: Codable{
 }
 
 struct Channels : Codable {
-    let title: String
-    let description: String
-    let dj: String
-    let image: String
+    let title: String?
+    let description: String?
+    let dj: String?
+    let image: String?
+    let genre: String?
+    var listeners: String?
+    var djmail : String?
 }

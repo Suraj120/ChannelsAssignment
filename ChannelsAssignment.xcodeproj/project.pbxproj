@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4496E63D22B1F22E0047738E /* DetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4496E63C22B1F22E0047738E /* DetailsViewController.swift */; };
 		4498B3A122ADF4D300A07CAF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4498B3A022ADF4D300A07CAF /* AppDelegate.swift */; };
 		4498B3A322ADF4D300A07CAF /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4498B3A222ADF4D300A07CAF /* ViewController.swift */; };
 		4498B3A622ADF4D300A07CAF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4498B3A422ADF4D300A07CAF /* Main.storyboard */; };
@@ -21,6 +22,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		4496E63C22B1F22E0047738E /* DetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsViewController.swift; sourceTree = "<group>"; };
 		4498B39D22ADF4D300A07CAF /* ChannelsAssignment.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ChannelsAssignment.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4498B3A022ADF4D300A07CAF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4498B3A222ADF4D300A07CAF /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -82,6 +84,7 @@
 				4498B3B622ADF98600A07CAF /* Constants.swift */,
 				4498B3B822ADF99700A07CAF /* Utility.swift */,
 				4498B3BA22ADFDB900A07CAF /* ChannelsModel.swift */,
+				4496E63C22B1F22E0047738E /* DetailsViewController.swift */,
 			);
 			path = ChannelsAssignment;
 			sourceTree = "<group>";
@@ -100,7 +103,6 @@
 				481325DC1B1C73645B44FF9F /* Pods-ChannelsAssignment.debug.xcconfig */,
 				45DF03E0B5C98208D18E13F3 /* Pods-ChannelsAssignment.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -231,6 +233,7 @@
 				4498B3B422ADF57200A07CAF /* ChannelsTableViewCell.swift in Sources */,
 				4498B3A322ADF4D300A07CAF /* ViewController.swift in Sources */,
 				4498B3BB22ADFDB900A07CAF /* ChannelsModel.swift in Sources */,
+				4496E63D22B1F22E0047738E /* DetailsViewController.swift in Sources */,
 				4498B3A122ADF4D300A07CAF /* AppDelegate.swift in Sources */,
 				4498B3B722ADF98600A07CAF /* Constants.swift in Sources */,
 			);
